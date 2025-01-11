@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Assets;
+use App\Models\Dihapuskan;
 use App\Models\LokasiAsset;
 use App\Models\CategoryBarang;
 use Illuminate\Support\Carbon;
@@ -17,8 +18,8 @@ class AssetsController extends Controller
     public function index()
     {
         $assets = Assets::latest()->get();
-
-        return view('data-asset.berwujud.index', compact('assets'));
+        $deletedAssets = Dihapuskan::all();
+        return view('data-asset.berwujud.index', compact('assets','deletedAssets'));
     }
 
     /**
@@ -190,5 +191,12 @@ class AssetsController extends Controller
 
         toast()->success('Berhasil', 'Asset Berwujud Berhasil dihapus');
         return redirect('/asset-berwujud')->withInput();
+    }
+
+    public function penyusutan()
+    {
+        $assets = Assets::latest()->get();
+        $deletedAssets = Dihapuskan::all();
+        return view('penyusutan.index', compact('assets','deletedAssets'));
     }
 }

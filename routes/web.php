@@ -4,6 +4,8 @@ use App\Http\Controllers\AssetsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryBarangController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DihapuskanController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LokasiAssetController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,5 +47,14 @@ Route::group(['middleware' => ['auth','role:admin,superadmin']], function() {
     Route::get('/asset-berwujud/edit/{assets}', [AssetsController::class, 'edit'])->name('asset.berwujud.edit');
     Route::put('/asset-berwujud/update/{assets}', [AssetsController::class, 'update'])->name('asset.berwujud.update');
     Route::delete('/asset-berwujud/delete/{assets}', [AssetsController::class, 'destroy'])->name('asset.berwujud.delete');
+
+    Route::get('/penyusutan', [AssetsController::class, 'penyusutan'])->name('penyusutan');
+
+    Route::get('/asset-dihapuskan', [DihapuskanController::class, 'index'])->name('asset.dihapuskan');
+    Route::get('/asset-dihapuskan/create', [DihapuskanController::class, 'create'])->name('asset.dihapuskan.create');
+    Route::post('/asset-dihapuskan/store', [DihapuskanController::class, 'store'])->name('asset.dihapuskan.store');
+
+    Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan');
+    Route::get('/laporan/download', [LaporanController::class, 'export'])->name('laporan.export');
 });
 

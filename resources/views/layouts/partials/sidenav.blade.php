@@ -24,7 +24,7 @@
             </div>
 
             <!-- Data Asset -->
-            <a class="nav-link collapsed {{ Route::is(['asset.berwujud*']) ? 'active' : '' }}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDataAsset" aria-expanded="false" aria-controls="collapseDataAsset">
+            <a class="nav-link collapsed {{ Route::is(['asset.berwujud*','asset.dihapuskan*']) ? 'active' : '' }}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDataAsset" aria-expanded="false" aria-controls="collapseDataAsset">
                <div class="sb-nav-link-icon"><i class="fas fa-box"></i></div>
                   Data Asset
                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -32,9 +32,19 @@
             <div class="collapse" id="collapseDataAsset" aria-labelledby="headingDataAsset" data-bs-parent="#sidenavAccordion">
                <nav class="sb-sidenav-menu-nested nav">
                   <a class="nav-link {{ Route::is(['asset.berwujud*']) ? 'active' : '' }}" href="{{ route('asset.berwujud') }}">Berwujud</a>
-                  <a class="nav-link" href="">Dihapuskan</a>
+                  <a class="nav-link {{ Route::is(['asset.dihapuskan*']) ? 'active' : '' }}" href="{{ route('asset.dihapuskan') }}">Dihapuskan</a>
                </nav>
             </div>
+
+            <a class="nav-link {{ Route::is(['penyusutan']) ? 'active' : '' }}" href="{{ route('penyusutan') }}">
+               <div class="sb-nav-link-icon"><i class="fas fa-chart-line"></i></div>
+               Penyusutan
+            </a>
+
+            <a class="nav-link {{ Route::is(['laporan*']) ? 'active' : '' }}" href="{{ route('laporan') }}">
+               <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
+               Laporan
+            </a>
          </div>
       </div>
    </nav>

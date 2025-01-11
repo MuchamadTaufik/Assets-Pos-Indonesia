@@ -20,4 +20,9 @@ class Assets extends Model
     {
         return $this->belongsTo(CategoryBarang::class);
     }
+
+    public function dihapuskan()
+    {
+        return $this->hasOne(Dihapuskan::class);
+    }
 }
