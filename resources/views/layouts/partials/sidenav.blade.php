@@ -7,16 +7,32 @@
                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                Dashboard
             </a>
-            <div class="sb-sidenav-menu-heading">Interface</div>
-            <a class="nav-link collapsed {{ Route::is(['category.barang*', 'lokasi*']) ? 'active' : '' }}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-               <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+
+            <div class="sb-sidenav-menu-heading">Components</div>
+
+            <!-- Master Data -->
+            <a class="nav-link collapsed {{ Route::is(['category.barang*', 'lokasi*']) ? 'active' : '' }}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMasterData" aria-expanded="false" aria-controls="collapseMasterData">
+               <div class="sb-nav-link-icon"><i class="fas fa-database"></i></div>
                   Master Data
                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
             </a>
-            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+            <div class="collapse" id="collapseMasterData" aria-labelledby="headingMasterData" data-bs-parent="#sidenavAccordion">
                <nav class="sb-sidenav-menu-nested nav">
                   <a class="nav-link {{ Route::is(['category.barang*']) ? 'active' : '' }}" href="{{ route('category.barang') }}">Kategori Barang</a>
                   <a class="nav-link {{ Route::is(['lokasi*']) ? 'active' : '' }}" href="{{ route('lokasi') }}">Lokasi Asset</a>
+               </nav>
+            </div>
+
+            <!-- Data Asset -->
+            <a class="nav-link collapsed {{ Route::is(['asset.berwujud*']) ? 'active' : '' }}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDataAsset" aria-expanded="false" aria-controls="collapseDataAsset">
+               <div class="sb-nav-link-icon"><i class="fas fa-box"></i></div>
+                  Data Asset
+               <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="collapseDataAsset" aria-labelledby="headingDataAsset" data-bs-parent="#sidenavAccordion">
+               <nav class="sb-sidenav-menu-nested nav">
+                  <a class="nav-link {{ Route::is(['asset.berwujud*']) ? 'active' : '' }}" href="{{ route('asset.berwujud') }}">Berwujud</a>
+                  <a class="nav-link" href="">Dihapuskan</a>
                </nav>
             </div>
          </div>

@@ -4,13 +4,13 @@
    <div class="container-fluid px-4">
          <ol class="breadcrumb mb-4 mt-4">
             <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Category Barang</li>
+            <li class="breadcrumb-item active">Category Asset</li>
          </ol>
          <div class="card mb-4">
             <div class="card-header d-flex justify-content-between align-items-center">
                <div>
                      <i class="fas fa-table me-1"></i>
-                     Category Barang
+                     Category Asset
                </div>
                <a href="{{ route('category.barang.create') }}" class="btn btn-primary">Tambah</a>
             </div>
@@ -19,7 +19,7 @@
                      <thead>
                         <tr>
                            <th>No.</th>
-                           <th>Nama Category Barang</th>
+                           <th>Nama Category Asset</th>
                            <th>Action</th>
                         </tr>
                      </thead>

@@ -10,4 +10,9 @@ class CategoryBarang extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function asset()
+    {
+        return $this->hasMany(Assets::class);
+    }
 }

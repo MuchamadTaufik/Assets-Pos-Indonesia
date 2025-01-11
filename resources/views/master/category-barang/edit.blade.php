@@ -4,14 +4,14 @@
 <div class="container-fluid px-4">
    <ol class="breadcrumb mb-4 mt-4">
       <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-      <li class="breadcrumb-item"><a href="{{ route('category.barang') }}">Category Barang</a></li>
-      <li class="breadcrumb-item active">Edit Category Barang</li>
+      <li class="breadcrumb-item"><a href="{{ route('category.barang') }}">Category Asset</a></li>
+      <li class="breadcrumb-item active">Edit Category Asset</li>
    </ol>
    <div class="card">
       <div class="card-header d-flex justify-content-between align-items-center">
          <div>
                <i class="fas fa-table me-1"></i>
-               Edit Category Barang
+               Edit Category Asset
          </div>
       </div>
       <div class="card-body">
@@ -21,7 +21,7 @@
             <div class="col-md-6">
                <div class="mb-3">
                   <label for="name" class="form-label">Nama</label>
-                  <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Masukan Nama Category Barang..." value="{{ old('name', $categoryBarang->name) }}" required />
+                  <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Masukan Nama Category Asset..." value="{{ old('name', $categoryBarang->name) }}" required />
                   @error('name')
                   <div class="invalid-feedback">
                      {{ $message }}
