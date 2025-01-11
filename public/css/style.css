@@ -1,0 +1,35 @@
+.form-button-action {
+    display: flex;
+    gap: 10px; /* Tambahkan jarak antar tombol */
+}
+
+.form-button-action .btn-action {
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.form-button-action .btn-edit {
+    color: #fff;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.form-button-action .btn-edit:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    color: #fff;
+}
+
+.form-button-action .btn-delete {
+    color: #fff;
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.form-button-action .btn-delete:hover {
+    background-color: #b02a37;
+    border-color: #b02a37;
+    color: #fff;
+}
